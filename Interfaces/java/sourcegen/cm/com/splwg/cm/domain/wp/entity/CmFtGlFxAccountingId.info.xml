@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dtoInfo entity="cmFtGlFxAccountingId" record="    T" systemGeneratedKey="true">
+  <id>
+    <idField name="ACCOUNTING_ID" type="string" size="12"/>
+  </id>
+  <string property="glAccount" name="GL_ACCT" size="254"/>
+  <date property="accountingDate" name="ACCOUNTING_DT"/>
+  <string property="fundCurrency" name="FUND_CURRENCY" size="3"/>
+  <string property="binSettlementCurrency" name="BIN_SETTLE_CURRENCY" size="3"/>
+  <string property="counterparty" name="COUNTERPARTY" size="12"/>
+  <string property="businessUnit" name="BUSINESS_UNIT" size="20"/>
+  <string property="batchControl" name="BATCH_CD" size="8"/>
+  <bigInteger property="batchNumber" name="BATCH_NBR" precision="10"/>
+  <version/>
+</dtoInfo>

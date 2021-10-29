@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dtoInfo entity="cmAdjustmentStaging" record="    T" systemGeneratedKey="true">
+  <id>
+    <idField name="ADJ_STG_UP_ID" type="bigInteger" precision="12"/>
+  </id>
+  <string property="accountNumber" name="ACCT_NBR" size="30"/>
+  <string property="adjustmentCategory" name="ADJ_CAT_CD" size="12"/>
+  <bigInteger property="adjustmentStagingControlID" name="ADJ_STG_CTL_ID" precision="12"/>
+  <string property="status" name="BO_STATUS_CD" size="12"/>
+  <string property="division" name="CIS_DIVISION" size="5"/>
+  <string property="errorInfo" name="ERROR_INFO" size="254"/>
+  <string property="eventId" name="EVENT_ID" size="60"/>
+  <boolean property="isEligibleForArchiving" name="ILM_ARCH_SW"/>
+  <date property="ilmDate" name="ILM_DT"/>
+  <bigInteger property="messageCategory" name="MESSAGE_CAT_NBR" precision="5"/>
+  <bigInteger property="messageNumber" name="MESSAGE_NBR" precision="5"/>
+  <string property="saType" name="SA_TYPE_CD" size="8"/>
+  <dateTime property="statusDateTime" name="STATUS_UPD_DTTM"/>
+  <dateTime property="uploadDateTime" name="UPLD_DTTM"/>
+</dtoInfo>

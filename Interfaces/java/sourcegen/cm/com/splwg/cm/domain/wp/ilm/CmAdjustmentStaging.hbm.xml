@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false">
+  <import class="com.splwg.cm.domain.wp.ilm.CmAdjustmentStaging_Per" rename="CmAdjustmentStaging"/>
+  <class name="com.splwg.cm.domain.wp.ilm.CmAdjustmentStaging_Per" proxy="com.splwg.domain.wp.ilm.CmAdjustmentStaging" table="CM_ADJ_STG                    ">
+    <!--prime key properties-->
+    <id name="id" column="ADJ_STG_UP_ID">
+      <type name="com.splwg.base.support.hibernatetypes.IntegerIdType">
+        <param name="idClass">com.splwg.cm.domain.wp.ilm.CmAdjustmentStaging_Id</param>
+      </type>
+      <generator class="com.splwg.base.support.hibernate.RandomKeyGenerator">
+        <param name="keyLength">12</param>
+      </generator>
+    </id>
+    <!--single-field properties-->
+    <property name="accountNumber" type="com.splwg.base.support.hibernatetypes.StringType" column="ACCT_NBR"/>
+    <property name="adjustmentCategory" type="com.splwg.base.support.hibernatetypes.StringType" column="ADJ_CAT_CD"/>
+    <property name="adjustmentStagingControlID" type="com.splwg.base.support.hibernatetypes.BigIntegerType" column="ADJ_STG_CTL_ID"/>
+    <property name="status" type="com.splwg.base.support.hibernatetypes.StringType" column="BO_STATUS_CD"/>
+    <property name="division" type="com.splwg.base.support.hibernatetypes.StringType" column="CIS_DIVISION"/>
+    <property name="errorInfo" type="com.splwg.base.support.hibernatetypes.StringType" column="ERROR_INFO"/>
+    <property name="eventId" type="com.splwg.base.support.hibernatetypes.StringType" column="EVENT_ID"/>
+    <property name="isEligibleForArchiving" type="com.splwg.base.support.hibernatetypes.BooleanType" column="ILM_ARCH_SW"/>
+    <property name="ilmDate" type="com.splwg.base.support.hibernatetypes.DateType" column="ILM_DT"/>
+    <property name="messageCategory" type="com.splwg.base.support.hibernatetypes.BigIntegerType" column="MESSAGE_CAT_NBR"/>
+    <property name="messageNumber" type="com.splwg.base.support.hibernatetypes.BigIntegerType" column="MESSAGE_NBR"/>
+    <property name="saType" type="com.splwg.base.support.hibernatetypes.StringType" column="SA_TYPE_CD"/>
+    <property name="statusDateTime" type="com.splwg.base.support.hibernatetypes.DateTimeType" column="STATUS_UPD_DTTM"/>
+    <property name="uploadDateTime" type="com.splwg.base.support.hibernatetypes.DateTimeType" column="UPLD_DTTM"/>
+    <!--optional foreign keys-->
+    <!--Many to ones-->
+    <!--one-to-many child collections-->
+  </class>
+</hibernate-mapping>

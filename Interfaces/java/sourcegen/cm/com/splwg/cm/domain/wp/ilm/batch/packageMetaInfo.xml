@@ -1,0 +1,34 @@
+<com.splwg.shared.environ.PackageMetaInfo>
+  <businessObjectDefinitions/>
+  <serviceDefinitions/>
+  <codeDescriptionQueries/>
+  <algorithmSpots/>
+  <algorithmComponents/>
+  <maintenanceExtensions/>
+  <batchJobs>
+    <com.splwg.shared.environ.BatchJobDefinition>
+      <batchJobData>
+        <name>cmAdjustmentStagingILMBatch</name>
+        <packageName>com.splwg.cm.domain.wp.ilm.batch</packageName>
+        <isRerunnable>true</isRerunnable>
+        <isMultiThreaded>true</isMultiThreaded>
+        <batchJobSoftParameters>
+          <com.splwg.shared.environ.BatchJobSoftParameterDefinition>
+            <name>maintenanceObject</name>
+            <type>string</type>
+            <isRequired>true</isRequired>
+            <index>1</index>
+          </com.splwg.shared.environ.BatchJobSoftParameterDefinition>
+        </batchJobSoftParameters>
+        <hasToDoCreation>false</hasToDoCreation>
+      </batchJobData>
+      <isContinuous>false</isContinuous>
+      <allToDoParameters/>
+      <modules>
+        <string>demo</string>
+      </modules>
+    </com.splwg.shared.environ.BatchJobDefinition>
+  </batchJobs>
+  <cobolCopyBooks/>
+  <cobolPrograms/>
+</com.splwg.shared.environ.PackageMetaInfo>

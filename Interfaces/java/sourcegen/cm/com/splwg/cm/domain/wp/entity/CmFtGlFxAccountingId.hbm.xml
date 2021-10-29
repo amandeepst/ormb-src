@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false">
+  <import class="com.splwg.cm.domain.wp.entity.CmFtGlFxAccountingId_Per" rename="CmFtGlFxAccountingId"/>
+  <class name="com.splwg.cm.domain.wp.entity.CmFtGlFxAccountingId_Per" proxy="com.splwg.domain.wp.entity.CmFtGlFxAccountingId" table="CM_FT_GL_FX_ACCTING_ID        ">
+    <!--prime key properties-->
+    <id name="id" column="ACCOUNTING_ID">
+      <type name="com.splwg.base.support.hibernatetypes.StringIdType">
+        <param name="idClass">com.splwg.cm.domain.wp.entity.CmFtGlFxAccountingId_Id</param>
+      </type>
+      <generator class="com.splwg.base.support.hibernate.ClusteringKeyGenerator">
+        <param name="keyLength">12</param>
+        <param name="parentProperty"></param>
+        <param name="parentKeyLength">0</param>
+        <param name="clusteringDigits">0</param>
+      </generator>
+    </id>
+    <!--optimistic concurrency version-->
+    <version name="version" column="VERSION" type="long" unsaved-value="negative"/>
+    <!--single-field properties-->
+    <property name="glAccount" type="com.splwg.base.support.hibernatetypes.StringType" column="GL_ACCT"/>
+    <property name="accountingDate" type="com.splwg.base.support.hibernatetypes.DateType" column="ACCOUNTING_DT"/>
+    <property name="fundCurrency" type="com.splwg.base.support.hibernatetypes.StringType" column="FUND_CURRENCY"/>
+    <property name="binSettlementCurrency" type="com.splwg.base.support.hibernatetypes.StringType" column="BIN_SETTLE_CURRENCY"/>
+    <property name="counterparty" type="com.splwg.base.support.hibernatetypes.StringType" column="COUNTERPARTY"/>
+    <property name="businessUnit" type="com.splwg.base.support.hibernatetypes.StringType" column="BUSINESS_UNIT"/>
+    <property name="batchControl" type="com.splwg.base.support.hibernatetypes.StringType" column="BATCH_CD"/>
+    <property name="batchNumber" type="com.splwg.base.support.hibernatetypes.BigIntegerType" column="BATCH_NBR"/>
+    <!--optional foreign keys-->
+    <!--Many to ones-->
+    <!--one-to-many child collections-->
+  </class>
+</hibernate-mapping>

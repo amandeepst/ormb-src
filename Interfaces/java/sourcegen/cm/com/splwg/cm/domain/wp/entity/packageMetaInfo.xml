@@ -1,0 +1,42 @@
+<com.splwg.shared.environ.PackageMetaInfo>
+  <businessObjectDefinitions>
+    <com.splwg.shared.environ.EntityDefinition>
+      <entityData>
+        <name>cmFtGlAslAccountingId</name>
+        <packageName>com.splwg.cm.domain.wp.entity</packageName>
+        <businessMethodData/>
+        <tableName>CM_FT_GL_ASL_ACCTING_ID       </tableName>
+        <qualifiedFirstBusinessClassName>com.splwg.cm.domain.wp.entity.CmFtGlAslAccountingId</qualifiedFirstBusinessClassName>
+        <cobolPersistence>false</cobolPersistence>
+        <childCollections class="java.util.Arrays$ArrayList">
+          <a class="com.splwg.shared.annotations.ChildAnnotation-array"/>
+        </childCollections>
+        <customizableProperties/>
+        <hasLanguage>false</hasLanguage>
+      </entityData>
+    </com.splwg.shared.environ.EntityDefinition>
+    <com.splwg.shared.environ.EntityDefinition>
+      <entityData>
+        <name>cmFtGlFxAccountingId</name>
+        <packageName>com.splwg.cm.domain.wp.entity</packageName>
+        <businessMethodData/>
+        <tableName>CM_FT_GL_FX_ACCTING_ID        </tableName>
+        <qualifiedFirstBusinessClassName>com.splwg.cm.domain.wp.entity.CmFtGlFxAccountingId</qualifiedFirstBusinessClassName>
+        <cobolPersistence>false</cobolPersistence>
+        <childCollections class="java.util.Arrays$ArrayList">
+          <a class="com.splwg.shared.annotations.ChildAnnotation-array"/>
+        </childCollections>
+        <customizableProperties/>
+        <hasLanguage>false</hasLanguage>
+      </entityData>
+    </com.splwg.shared.environ.EntityDefinition>
+  </businessObjectDefinitions>
+  <serviceDefinitions/>
+  <codeDescriptionQueries/>
+  <algorithmSpots/>
+  <algorithmComponents/>
+  <maintenanceExtensions/>
+  <batchJobs/>
+  <cobolCopyBooks/>
+  <cobolPrograms/>
+</com.splwg.shared.environ.PackageMetaInfo>

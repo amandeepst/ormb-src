@@ -1,0 +1,27 @@
+<com.splwg.shared.environ.PackageMetaInfo>
+  <businessObjectDefinitions>
+    <com.splwg.shared.environ.EntityDefinition>
+      <entityData>
+        <name>cmAdjustmentStaging</name>
+        <packageName>com.splwg.cm.domain.wp.ilm</packageName>
+        <businessMethodData/>
+        <tableName>CM_ADJ_STG                    </tableName>
+        <qualifiedFirstBusinessClassName>com.splwg.cm.domain.wp.ilm.CmAdjustmentStaging</qualifiedFirstBusinessClassName>
+        <cobolPersistence>false</cobolPersistence>
+        <childCollections class="java.util.Arrays$ArrayList">
+          <a class="com.splwg.shared.annotations.ChildAnnotation-array"/>
+        </childCollections>
+        <customizableProperties/>
+        <hasLanguage>false</hasLanguage>
+      </entityData>
+    </com.splwg.shared.environ.EntityDefinition>
+  </businessObjectDefinitions>
+  <serviceDefinitions/>
+  <codeDescriptionQueries/>
+  <algorithmSpots/>
+  <algorithmComponents/>
+  <maintenanceExtensions/>
+  <batchJobs/>
+  <cobolCopyBooks/>
+  <cobolPrograms/>
+</com.splwg.shared.environ.PackageMetaInfo>

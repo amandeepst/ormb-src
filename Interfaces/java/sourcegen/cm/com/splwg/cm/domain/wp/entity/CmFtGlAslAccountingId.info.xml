@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dtoInfo entity="cmFtGlAslAccountingId" record="    T" systemGeneratedKey="true">
+  <id>
+    <idField name="ACCOUNTING_ID" type="string" size="12"/>
+  </id>
+  <foreignKey property="currencyId" entity="currency">
+    <fkField name="CURRENCY_CD" type="currency" fkName="CURRENCY_CD"/>
+  </foreignKey>
+  <string property="glAccount" name="GL_ACCT" size="254"/>
+  <date property="accountingDate" name="ACCOUNTING_DT"/>
+  <string property="counterparty" name="COUNTERPARTY" size="12"/>
+  <string property="businessUnit" name="BUSINESS_UNIT" size="20"/>
+  <string property="costCenter" name="COST_CENTRE" size="2"/>
+  <string property="intercompany" name="INTERCOMPANY" size="12"/>
+  <string property="scheme" name="SCHEME" size="16"/>
+  <lookup property="financialTransactionType" name="FT_TYPE_FLG" size="2"/>
+  <string property="batchControl" name="BATCH_CD" size="8"/>
+  <bigInteger property="batchNumber" name="BATCH_NBR" precision="10"/>
+  <string property="accountNumber" name="ACCT_NBR" size="30"/>
+  <money property="amount" name="AMOUNT" precision="15" scale="2"/>
+  <version/>
+</dtoInfo>

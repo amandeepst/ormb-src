@@ -1,0 +1,13 @@
+<com.splwg.shared.environ.ContextManagedObjectData>
+  <domainPackages>
+    <string>com.splwg.cm.domain.wp.algorithm</string>
+    <string>com.splwg.cm.domain.wp.batch</string>
+    <string>com.splwg.cm.domain.wp.entity</string>
+    <string>com.splwg.cm.domain.wp.ilm</string>
+    <string>com.splwg.cm.domain.wp.ilm.algorithm</string>
+    <string>com.splwg.cm.domain.wp.ilm.batch</string>
+    <string>com.splwg.cm.domain.wp.pageService</string>
+  </domainPackages>
+  <lookupFieldClasses class="tree-map"/>
+  <cobolAlgorithmInterfaceExtensions class="tree-map"/>
+</com.splwg.shared.environ.ContextManagedObjectData>

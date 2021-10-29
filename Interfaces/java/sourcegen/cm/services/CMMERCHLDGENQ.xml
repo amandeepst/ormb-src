@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<page name="MerchantLedgerEnquiry" service="CMMERCHLDGENQ">
+  <pageHeader>
+    <string name="PER_ID_NBR" size="90" cobolName="PER_ID_NBR"/>
+    <string name="CIS_DIVISION" size="5" cobolName="CIS_DIVISION"/>
+    <currency name="CURRENCY_CD" cobolName="CURRENCY_CD"/>
+    <string name="ACCT_NBR" size="30" cobolName="ACCT_NBR"/>
+    <string name="DESCR" size="60" cobolName="DESCR"/>
+    <lookup name="BILL_STAT_FLG" size="2" cobolName="BILL_STAT_FLG"/>
+    <date name="START_DATE" cobolName="START_DATE"/>
+    <date name="END_DATE" cobolName="END_DATE"/>
+    <string name="NUM1" size="6" cobolName="NUM1"/>
+  </pageHeader>
+  <pageBody>
+    <string name="PER_ID_NBR" size="90" cobolName="PER_ID_NBR"/>
+    <list name="Division" size="100" userGetMore="false">
+      <listHeader/>
+      <listBody>
+        <string name="CIS_DIVISION" size="5" cobolName="CIS_DIVISION"/>
+        <list name="Currency" size="100" userGetMore="false">
+          <listHeader/>
+          <listBody>
+            <list name="MerchantLdgAcct" size="100" userGetMore="false">
+              <listHeader/>
+              <listBody>
+                <money name="CUR_AMT" precision="15" scale="2" cobolName="CUR_AMT"/>
+                <list name="Account" size="100" userGetMore="false">
+                  <listHeader/>
+                  <listBody>
+                    <string name="ACCT_ID" size="10" cobolName="ACCT_ID"/>
+                    <string name="DESCR" size="60" cobolName="DESCR"/>
+                    <list name="Contract" size="100" userGetMore="false">
+                      <listHeader/>
+                      <listBody>
+                        <string name="SA_ID" size="10" cobolName="SA_ID"/>
+                        <string name="SA_TYPE_CD" size="8" cobolName="SA_TYPE_CD"/>
+                        <money name="CUR_AMT" precision="15" scale="2" cobolName="CUR_AMT"/>
+                        <currency name="CURRENCY_CD" cobolName="CURRENCY_CD"/>
+                      </listBody>
+                    </list>
+                  </listBody>
+                </list>
+                <list name="FinancialDocument" size="100" userGetMore="false">
+                  <listHeader/>
+                  <listBody>
+                    <string name="BILL_ID" size="12" cobolName="BILL_ID"/>
+                    <string name="SA_TYPE_CD" size="8" cobolName="SA_TYPE_CD"/>
+                    <money name="CUR_AMT" precision="15" scale="2" cobolName="CUR_AMT"/>
+                    <currency name="CURRENCY_CD" cobolName="CURRENCY_CD"/>
+                    <string name="CIS_DIVISION" size="5" cobolName="CIS_DIVISION"/>
+                    <date name="START_DT" cobolName="START_DT"/>
+                    <date name="END_DT" cobolName="END_DT"/>
+                    <date name="DUE_DT" cobolName="DUE_DT"/>
+                    <date name="BILL_DT" cobolName="BILL_DT"/>
+                    <string name="ALT_BILL_ID" size="30" cobolName="ALT_BILL_ID"/>
+                    <string name="LINE_ID" size="12" cobolName="LINE_ID"/>
+                    <money name="LINE_AMT" precision="15" scale="2" cobolName="LINE_AMT"/>
+                    <string name="BANK_ENTRY_EVENT_ID" size="60" cobolName="BANK_ENTRY_EVENT_ID"/>
+                    <money name="UNPAID_AMT" precision="15" scale="2" cobolName="UNPAID_AMT"/>
+                    <string name="BANKING_ENTRY_STATUS" size="12" cobolName="BANKING_ENTRY_STATUS"/>
+                    <string name="NUM1" size="6" cobolName="NUM1"/>
+                  </listBody>
+                </list>
+              </listBody>
+            </list>
+          </listBody>
+        </list>
+      </listBody>
+    </list>
+    <string name="STATUS" size="1" cobolName="STATUS"/>
+    <string name="ERROR_MSG" size="400" cobolName="ERROR_MSG"/>
+  </pageBody>
+</page>

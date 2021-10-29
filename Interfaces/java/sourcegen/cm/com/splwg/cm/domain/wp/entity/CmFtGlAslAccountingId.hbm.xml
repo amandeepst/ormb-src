@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false">
+  <import class="com.splwg.cm.domain.wp.entity.CmFtGlAslAccountingId_Per" rename="CmFtGlAslAccountingId"/>
+  <class name="com.splwg.cm.domain.wp.entity.CmFtGlAslAccountingId_Per" proxy="com.splwg.domain.wp.entity.CmFtGlAslAccountingId" table="CM_FT_GL_ASL_ACCTING_ID       ">
+    <!--prime key properties-->
+    <id name="id" column="ACCOUNTING_ID">
+      <type name="com.splwg.base.support.hibernatetypes.StringIdType">
+        <param name="idClass">com.splwg.cm.domain.wp.entity.CmFtGlAslAccountingId_Id</param>
+      </type>
+      <generator class="com.splwg.base.support.hibernate.ClusteringKeyGenerator">
+        <param name="keyLength">12</param>
+        <param name="parentProperty"></param>
+        <param name="parentKeyLength">0</param>
+        <param name="clusteringDigits">0</param>
+      </generator>
+    </id>
+    <!--optimistic concurrency version-->
+    <version name="version" column="VERSION" type="long" unsaved-value="negative"/>
+    <!--single-field properties-->
+    <property name="glAccount" type="com.splwg.base.support.hibernatetypes.StringType" column="GL_ACCT"/>
+    <property name="accountingDate" type="com.splwg.base.support.hibernatetypes.DateType" column="ACCOUNTING_DT"/>
+    <property name="counterparty" type="com.splwg.base.support.hibernatetypes.StringType" column="COUNTERPARTY"/>
+    <property name="businessUnit" type="com.splwg.base.support.hibernatetypes.StringType" column="BUSINESS_UNIT"/>
+    <property name="costCenter" type="com.splwg.base.support.hibernatetypes.StringType" column="COST_CENTRE"/>
+    <property name="intercompany" type="com.splwg.base.support.hibernatetypes.StringType" column="INTERCOMPANY"/>
+    <property name="scheme" type="com.splwg.base.support.hibernatetypes.StringType" column="SCHEME"/>
+    <property name="financialTransactionType" column="FT_TYPE_FLG">
+      <type name="com.splwg.base.support.hibernatetypes.LookupType">
+        <param name="lookupClass">com.splwg.ccb.api.lookup.FinancialTransactionTypeLookup</param>
+      </type>
+    </property>
+    <property name="batchControl" type="com.splwg.base.support.hibernatetypes.StringType" column="BATCH_CD"/>
+    <property name="batchNumber" type="com.splwg.base.support.hibernatetypes.BigIntegerType" column="BATCH_NBR"/>
+    <property name="accountNumber" type="com.splwg.base.support.hibernatetypes.StringType" column="ACCT_NBR"/>
+    <property name="amount" type="com.splwg.base.support.hibernatetypes.MoneyType" column="AMOUNT"/>
+    <!--optional foreign keys-->
+    <property name="currencyId" column="CURRENCY_CD">
+      <type name="com.splwg.base.support.hibernatetypes.StringIdType">
+        <param name="idClass">com.splwg.base.domain.common.currency.Currency_Id</param>
+      </type>
+    </property>
+    <!--Many to ones-->
+    <!--one-to-many child collections-->
+  </class>
+</hibernate-mapping>
