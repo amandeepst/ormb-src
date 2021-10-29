@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="build" default="all">
+    <property name="module.name" value="cm" />
+    <property name="javaSourceDir" value="Interfaces/java/source/${module.name}" />
+    <property name="genSourceDir" value="Interfaces/java/sourcegen/${module.name}" />
+    <!--property name="testSourceDir" value="Interfaces/test/source/${module.name}" /-->
+    <property name="libDir" value="target/dependency" />
+    <property name="build.dir" value="target/${module.name}" />
+    <property name="classDir" value="target/${module.name}" />
+    <property name="deploy.dir" value="targetlib/lib" />
+    <target name="delete">
+        <delete file="targetlib/lib/cm.jar" />
+        <delete dir="target/cm/cobolServices" />
+        <delete dir="target/cm/com" />
+        <delete dir="target/cm/services" />
+        <delete file="targetlib/lib/Release-Version.txt" />
+    </target>
+
+    <mkdir dir="target/${module.name}"/>
+
+    <copy file="Release-Version.txt" todir="${deploy.dir}" />
+
+    <path id="compileClasspath">
+        <fileset dir="${libDir}" />
+    </path>
+
+	<!-- Rename jars to remove version numbers-->
+
+	<move file="${libDir}/spl-properties-2.3.0.1.jar" tofile="${libDir}/spl-properties.jar"/>
+	<move file="${libDir}/orai18n-utility-2.3.0.1.jar" tofile="${libDir}/orai18n-utility.jar"/>
+	<move file="${libDir}/orai18n-mapping-2.3.0.1.jar" tofile="${libDir}/orai18n-mapping.jar"/>
+	<move file="${libDir}/orai18n-collation-2.3.0.1.jar" tofile="${libDir}/orai18n-collation.jar"/>
+	<move file="${libDir}/orai18n-2.3.0.1.jar" tofile="${libDir}/orai18n.jar"/>
+
+
+
+    <target name="compileGen">
+        <echo message="compile classpath: ${compile_classpath}" />
+        <echo message="runtime classpath: ${runtime_classpath}" />
+        <!--echo message="test classpath:    ${test_classpath}" /-->
+        <echo message="plugin classpath:  ${plugin_classpath}" />
+        <javac srcdir="${genSourceDir}:${javaSourceDir}" destdir="${classDir}" debug="true" deprecation="true" encoding="iso-8859-1" >
+            <classpath refid="compileClasspath"/>
+        </javac>
+        <!-- Copy files needed to run the software to destinations in the 
+	         build directory. I do this because I usually pull all binary files like
+	         this from inside the Jar files that make up my application rather than
+	         having them loose. So they need to be copied to the class dir so they
+	         get included in the Jar file for the application. -->
+        <copy todir="${classDir}">
+            <fileset dir="${genSourceDir}">
+                <exclude name="**/*.java" />
+            </fileset>
+        </copy>
+    </target>
+    <target name="compile">
+        <javac srcdir="${javaSourceDir}" destdir="${classDir}" debug="true" deprecation="true" encoding="iso-8859-1" >
+            <classpath refid="compileClasspath" />
+        </javac>
+        <!-- Copy files needed to run the software to destinations in the 
+	         build directory. I do this because I usually pull all binary files like 
+	         this from inside the Jar files that make up my application rather than
+	         having them loose. So they need to be copied to the class dir so they
+	         get included in the Jar file for the application. -->
+        <copy todir="${classDir}">
+            <fileset dir="${javaSourceDir}">
+                <include name="**/*.class" />
+            </fileset>
+        </copy>
+    </target>
+    <!--target name="compileTest">
+        <javac srcdir="${testSourceDir}" destdir="${classDir}" debug="true" deprecation="true" encoding="iso-8859-1" >
+            <classpath refid="compileClasspath" />
+        </javac>
+        < Copy files needed to run the software to destinations in the 
+	         build directory. I do this because I usually pull all binary files like 
+	         this from inside the Jar files that make up my application rather than
+	         having them loose. So they need to be copied to the class dir so they
+	         get included in the Jar file for the application. >
+        <copy todir="${classDir}">
+            <fileset dir="${testSourceDir}">
+                <include name="**/*.class" />
+            </fileset>
+        </copy>
+    </target-->
+    <!-- creating cm  jar -->
+    <target name="jar">
+        <echo>...Create jar file for cm</echo>
+        <jar destfile="${deploy.dir}/cm.jar" basedir="${build.dir}" includes="**/*.class,**/*.xml" />
+        <echo>...Finished create jar file for cm jar</echo>
+    </target>
+    <target name="all" depends="compileGen, compile, jar" />
+</project>
